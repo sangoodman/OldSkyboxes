@@ -24,8 +24,6 @@
 
 	<ItemGroup>
 		<Compile Include="Core.cs" />
-		<Compile Include="Sayorizer.cs" />
-		<Compile Include="Utils.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -35,6 +33,9 @@
 	<ItemGroup>
 	  <Reference Include="Assembly-CSharp">
 	    <HintPath>..\..\..\Steam Games\Fractal Space\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="BooksAndFractals">
+	    <HintPath>..\..\..\Steam Games\Fractal Space\UserLibs\BooksAndFractals.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Il2CppInterop.Common">
 	    <HintPath>..\..\..\Steam Games\Fractal Space\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>

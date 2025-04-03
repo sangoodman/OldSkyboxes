@@ -2,8 +2,9 @@
 using UnityEngine;
 using Object = UnityEngine.Object;
 using System.Reflection;
+using BooksAndFractals;
 
-[assembly: MelonInfo(typeof(OldSkyboxes.Core), "Old Skyboxes", "1.1.0", "sangoodman", null)]
+[assembly: MelonInfo(typeof(OldSkyboxes.Core), "Old Skyboxes", "1.1.1", "sangoodman", null)]
 [assembly: MelonGame("Haze Games", "Fractal Space")]
 [assembly: MelonColor(255, 190, 124, 103)]
 [assembly: MelonAuthorColor(255, 128, 128, 128)]
@@ -18,13 +19,7 @@ namespace OldSkyboxes
             if(buildIndex > 2)
             {
                 ChangeSkybox(buildIndex);
-            }
-            if(buildIndex>=1) 
-            {
-                GameObject helper = new GameObject("helper");
-                helper.AddComponent<Sayorizer>();
-            }
-            
+            }     
         }
 
         private void ChangeSkybox(int buildIndex)
@@ -36,7 +31,7 @@ namespace OldSkyboxes
                     break;
                 case 3:
                     RenderSettings.skybox = LoadAsset<Material>("Chapter_1");
-                    GameObject[] planets_ch1 = Utilities.GetChilds(GameObject.Find("Planets"));
+                    GameObject[] planets_ch1 = ObjectManipulation.GetChildrenOfObject(GameObject.Find("Planets"));
                     if (planets_ch1 != null)
                     {
                         foreach (var planet in planets_ch1)
@@ -48,7 +43,7 @@ namespace OldSkyboxes
                     break;
                 case 4:
                     RenderSettings.skybox = LoadAsset<Material>("Chapter_2");
-                    GameObject[] planets_ch2 = Utilities.GetChilds(GameObject.Find("Planets"));
+                    GameObject[] planets_ch2 = ObjectManipulation.GetChildrenOfObject(GameObject.Find("Planets"));
                     if (planets_ch2 != null)
                     {
                         foreach (var planet in planets_ch2)
@@ -59,7 +54,7 @@ namespace OldSkyboxes
                     break;
                 case 5:
                     RenderSettings.skybox = LoadAsset<Material>("Chapter_3");
-                    GameObject[] planets_ch3 = Utilities.GetChilds(GameObject.Find("Planets"));
+                    GameObject[] planets_ch3 = ObjectManipulation.GetChildrenOfObject(GameObject.Find("Planets"));
                     if (planets_ch3 != null)
                     {
                         foreach (var planet in planets_ch3)
@@ -70,7 +65,7 @@ namespace OldSkyboxes
                     break;
                 case 6:
                     RenderSettings.skybox = LoadAsset<Material>("Menu_and_Chapter_4");
-                    GameObject[] planets_ch4 = Utilities.GetChilds(GameObject.Find("Planets"));
+                    GameObject[] planets_ch4 = ObjectManipulation.GetChildrenOfObject(GameObject.Find("Planets"));
                     if (planets_ch4 != null)
                     {
                         foreach (var planet in planets_ch4)
